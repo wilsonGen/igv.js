@@ -355,7 +355,7 @@ class Browser {
      */
     toSVG() {
 
-        const {y, width, height} = this.columnContainer.getBoundingClientRect()
+        const {x, y, width, height} = this.columnContainer.getBoundingClientRect()
 
         const h_render = 8000
 
@@ -387,7 +387,7 @@ class Browser {
             trackView.renderSVGContext(context, delta)
         }
 
-        this.roiManager.renderSVGContext(context, delta)
+        this.roiManager.renderSVGContext(context, delta, x)
 
         // reset height to trim away unneeded svg canvas real estate. Yes, a bit of a hack.
         context.setHeight(height)
